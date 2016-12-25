@@ -53,7 +53,7 @@ print_info() {
 
 check () {
   if [[ -f $1 ]]; then
-    printf "checking $1..."
+    printf "checking '$1'..."
     res=$(max_line_of_file $1 $threshold)
     if [[ -n $res ]]; then
       echo -e "${YELLOW}EXCEEDS: $res${NC}"
