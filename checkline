@@ -1,5 +1,7 @@
 #!/bin/bash
 # checkline: check if max line length exceeds a threshold
+# Usage: checkline [-t threshold] [-r] file/directory [file/directory]...
+# TODO: add exclude pattern, for example, node_modules | *.md
 
 # Function max_line_of_file
 #   Get the line with the maximum length of a file
