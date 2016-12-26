@@ -14,16 +14,15 @@
 #   If longest line exceeds $2, the output the following:
 #     <longest line length> <longest line number>
 max_line_of_file () {
-  max_line=
   max_len=0
   max_lineno=1
   if [[ -r $1 ]]; then
     lineno=1
     while IFS='' read -r line || [[ -n "$line" ]]; do
-      len=$(echo "$line" | wc -c)
+      # len=$(echo "$line" | wc -c)
+      len=${#line}
       if (( len > max_len )); then
         max_len=$len
-        max_line=$line
         max_lineno=$lineno
       fi
       lineno=$((lineno + 1))
