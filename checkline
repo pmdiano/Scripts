@@ -63,13 +63,13 @@ check () {
       echo -e "${GREEN}OK${NC}"
     fi
   elif [[ -d $1 ]]; then
-    for i in "$1"/*; do
-      if [[ -z $recursive ]]; then
-        echo "$i is a directory"
-      else
+    if [[ -z $recursive ]]; then
+      echo "'$1' is a directory"
+    else
+      for i in "$1"/*; do
         check "$i"
-      fi
-    done
+      done
+    fi
   fi
 }
 
